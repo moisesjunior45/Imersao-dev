@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moedas</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">
+          Conversor de moedas
+        </h1>
+        <p class="page-subtitle">
+          Descubra os valores em $Dolar e €Euro
+        </p>
+        <img src="https://www.alura.com.br/assets/img/imersoes/dev-2021/logo-imersao-conversor-de-moedas.svg" class="page-logo" alt=""><br><br>
+        <label for="moeda">Insira o valor</label><br>
+        <input type="number" id="valor" size="2" /><br>
+        <button type="submit" onclick="ConverterDolar(), ConverterEuro()">Converter</button>
+        <h2 id="valorConvertidoDolar"></h2>
+        <h2 id="valorConvertidoEuro"></h2>
+      </div>
+      <a href="https://alura.com.br/" target="_blank">
+        <img src="https://www.alura.com.br/assets/img/home/alura-logo.svg" alt="" class="alura-logo">
+
+
+
+
+        <script>
+          function ConverterDolar() {
+            var valorElemento = document.getElementById("valor");
+            var valor  = Number(valorElemento.value);
+            var valorEmDolar = valor / 5.26;
+            //alert("O valor em Dolar é: " + valorEmDolar.toFixed(2))
+            var elementoValorConvertido = document.getElementById("valorConvertidoDolar");
+            elementoValorConvertido.innerHTML = "O resultado em Dolar é $ " +valorEmDolar.toFixed(2);
+          }
+
+          function ConverterEuro() {
+            var valorElemento = document.getElementById("valor");
+            var valor  = Number(valorElemento.value);
+            var valorEmEuro = valor / 6.19 ;
+            var elementoValorConvertido = document.getElementById("valorConvertidoEuro");
+            elementoValorConvertido.innerHTML = "O resultado em Euro é € " +valorEmEuro.toFixed(2);
+          }
+        </script>
+</body>
+</html>
